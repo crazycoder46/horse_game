@@ -1,0 +1,168 @@
+<html>
+<meta charset="utf-8" />
+<head>
+<style type="text/css">
+body{
+padding:0px;
+margin:0px;
+background-color:#bdc3c7;
+}
+#div1{
+width:355px;
+background-color:#27ae60;
+border-top:3px black solid;
+border-bottom:1.5px black solid;
+border-right:5px #c0392b solid;
+}
+#div2{
+width:355px;
+background-color:#27ae60;
+border-top:1.5px black solid;
+border-bottom:1.5px black solid;
+border-right:5px #c0392b solid;
+}
+#div3{
+width:355px;
+background-color:#27ae60;
+border-top:1.5px black solid;
+border-bottom:1.5px black solid;
+border-right:5px #c0392b solid;
+}
+#div4{
+width:355px;
+background-color:#27ae60;
+border-top:1.5px black solid;
+border-bottom:3px black solid;
+border-right:5px #c0392b solid;
+}
+input[type="button"]{
+background:none;
+margin-left:140px;
+text-align:center;
+border:2px solid #8e44ad;
+padding:10px 50px 10px 5px;
+width:20px;
+outline:none;
+color:black;
+border-radius:24px;
+transition:0.25s;
+cursor:pointer;
+}
+input[type="text"]{
+background:none;
+display:block;
+text-align:center;
+margin-left:70px;
+border:2px solid #3498db;
+padding:14px 10px;
+width:200px;
+outline:none;
+color:black;
+border-radius:24px;
+transition:0.25s;
+}
+input[type="text"]:focus{
+border-color:#2ecc71;
+width:280px;
+margin-left:30px;
+}
+input[type="button"]:hover{
+background:#8e44ad;
+}
+</style>
+</head>
+<body>
+<div id="div1">
+<img src="Horse1.gif" id="at1" width="100px" height="70px"/><br>
+</div>
+<div id="div2">
+<img src="Horse2.gif" id="at2" width="100px" height="70px"/><br>
+</div>
+<div id="div3">
+<img src="Horse3.gif" id="at3" width="100px" height="70px"/><br>
+</div>
+<div id="div4">
+<img src="Horse4.gif" id="at4" width="100px" height="70px"/>
+</div><br>
+<input type="button" value="BAȘLA" id="basla" onclick="ileri()"/>
+<p>Hangi Ata Bahis Oynayacaksın?</p>
+<input type="text" id="oynanan"/> 
+<p>Kaç Para yatıracaksınız?(Bakiyeniz:1000tl)</p>
+<input type="text" id="yatirilan"/> 
+
+<script>
+window.alert("this program created by Mehmet ÇAY!");
+var at1=document.getElementById("at1");
+var at2=document.getElementById("at2");
+var at3=document.getElementById("at3");
+var at4=document.getElementById("at4");
+var basla=document.getElementById("basla");
+var oynanan=document.getElementById("oynanan");
+var yatirilan=document.getElementById("yatirilan");
+
+var a1=0;
+var a2=0;
+var a3=0;
+var a4=0;
+var kazanan;
+var bakiye=1000;
+
+function ileri(){
+var mytime=setInterval(function(){
+a1 += Math.round(Math.random()*7);
+a2 += Math.round(Math.random()*7);
+a3 += Math.round(Math.random()*7);
+a4 += Math.round(Math.random()*7);
+
+at1.style.marginLeft= a1;
+at2.style.marginLeft= a2;
+at3.style.marginLeft= a3;
+at4.style.marginLeft= a4;
+
+if(a1>267 && a1<274){
+clearInterval(mytime);
+kazanan=1;
+if(kazanan==oynanan.value){
+window.alert("Tebrikler!Kazandığınız tutar:" + (bakiye +(yatirilan.value)*20) +"tl");
+}
+if(kazanan != oynanan.value){
+window.alert("Kaybettiniz!Kazandığınız tutar:" + (bakiye - yatirilan.value) +"tl");
+}
+}
+
+if(a2>267 && a2<274){
+clearInterval(mytime);
+kazanan=2;
+if(kazanan==oynanan.value){
+window.alert("Tebrikler!Kazandığınız tutar:" + (bakiye +(yatirilan.value)*20) +"tl");
+}
+if(kazanan != oynanan.value){
+window.alert("Kaybettiniz!Kazandığınız tutar:" + (bakiye - yatirilan.value) +"tl");
+}
+}
+
+if(a3>267 && a3<274){
+clearInterval(mytime);
+kazanan=3;
+if(kazanan==oynanan.value){
+window.alert("Tebrikler!Kazandığınız tutar:" + (bakiye +(yatirilan.value)*20) +"tl");
+}
+if(kazanan != oynanan.value){
+window.alert("Kaybettiniz!Kazandığınız tutar:" + (bakiye - yatirilan.value) +"tl");
+}
+}
+
+if(a4>267 && a4<274){
+clearInterval(mytime);
+kazanan=4;
+if(kazanan==oynanan.value){
+window.alert("Tebrikler!Kazandığınız tutar:" + (bakiye +(yatirilan.value)*20) +"tl");
+}
+if(kazanan != oynanan.value){
+window.alert("Kaybettiniz!Kazandığınız tutar:" + (bakiye - yatirilan.value) +"tl");
+}
+} },100);
+}
+</script>
+</body>
+</html>
